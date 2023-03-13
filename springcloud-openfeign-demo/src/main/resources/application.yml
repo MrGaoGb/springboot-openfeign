@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: springboot-openfeign-demo
+
+
+server:
+  port: 8888
+
+# ??????
+gateway:
+  requestUrl: http://localhost:9999/user/editInfo
