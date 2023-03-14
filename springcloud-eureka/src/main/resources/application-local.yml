@@ -1,0 +1,19 @@
+
+# Eureka服务端配置
+eureka:
+  instance:
+    hostname: localhost
+    health-check-url: /health #健康检查地址
+    status-page-url-path: /info #状态页的url地址
+  client:
+    register-with-eureka: false
+    fetch-registry: false # false 服务端会将自身作为一个服务注册到注册中心
+    service-url:
+      defaultZone: http://tc:tc123@${eureka.instance.hostname}:${server.port}/eureka/
+    healthcheck:
+      enabled: true
+  server:
+    enable-self-preservation: false # 关闭自我保护模式
+    eviction-interval-timer-in-ms: 10000 # 续期时间,即扫描失效服务的间隔时间（缺省为60*1000ms）
+    response-cache-update-interval-ms: 5000 #eureka server刷新readCacheMap的时间，默认30s 注意，client读取的是readCacheMap，这个时间决定了多久会把readWriteCacheMap的缓存更新到readCacheMap上
+

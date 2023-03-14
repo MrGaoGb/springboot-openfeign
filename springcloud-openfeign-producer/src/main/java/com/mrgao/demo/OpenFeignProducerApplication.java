@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients(basePackages = {"com.mrgao.demo.client"})
-public class OpenFeignDemoApplication {
+public class OpenFeignProducerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OpenFeignDemoApplication.class, args);
+        SpringApplication.run(OpenFeignProducerApplication.class, args);
     }
 
 }

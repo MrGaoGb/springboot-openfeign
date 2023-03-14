@@ -9,27 +9,48 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-
     <groupId>com.mrgao.demo</groupId>
-    <artifactId>springcloud-eureka</artifactId>
+    <artifactId>springcloud-openfeign-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud-eureka</name>
+    <name>springcloud-openfeign-producer</name>
     <packaging>jar</packaging>
-    <description>springcloud-eureka</description>
 
     <dependencies>
-        <!--spring-boot依赖-->
+        <!--SpringBoot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <!--Eureka依赖-->
+        <!-- Spring Cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <!--lombok插件-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83</version>
+        </dependency>
+        <!--单元测试类-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -38,7 +59,7 @@
     </dependencies>
 
     <build>
-        <finalName>springcloud-eureka</finalName>
+        <finalName>springcloud-openfeign-producer</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources/lib</directory>
@@ -93,7 +114,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.mrgao.demo.EurekaApplication</mainClass>
+                            <mainClass>com.mrgao.demo.OpenFeignProducerApplication</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Class-Path>.</Class-Path>
